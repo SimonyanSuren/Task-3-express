@@ -1,4 +1,4 @@
-const { usersId } = require('./model');
+const { usersId } = require('../models/posts.model');
 
 module.exports.mustLogin = (req, res, next) => {
   const userId = req.get('userId');

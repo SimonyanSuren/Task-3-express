@@ -44,3 +44,4 @@ module.exports = {
   addNewPost,
   getSpecPost,
 };
+console.log(__dirname);

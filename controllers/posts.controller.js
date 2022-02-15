@@ -1,4 +1,4 @@
-const { getPosts, addNewPost, getSpecPost } = require('./model');
+const { getPosts, addNewPost, getSpecPost } = require('../models/posts.model');
 
 function getUsersPost(req, res, next) {
   res.send(getPosts());
@@ -39,7 +39,7 @@ function editPost(req, res, next) {
   const posts = getPosts().filter((post) => post.userId === +userId);
   posts.find((post) => post['id'] === +postId).title = req.body.title;
   addNewPost(posts, userId);
-  res.send('userPosts');
+  res.send('The post change was saved');
 }
 
 function removeUserPost(req, res, next) {
@@ -73,7 +73,7 @@ function addComment(res, req, next) {
   };
   posts[postIndex].comments.push(newComment);
   addNewPost(posts, userId);
-  req.send('Comment already have been added');
+  req.send('Comment added');
 }
 
 module.exports = {
