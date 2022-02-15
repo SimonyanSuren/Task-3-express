@@ -6,7 +6,6 @@ function addNewPost(newPost, userId) {
   const folders = fs.readdirSync(filePath);
   const folder = folders.find((item) => item.includes(userId));
   const userFolderPath = path.resolve(filePath, folder, 'posts.json');
-  console.log(folder);
   fs.writeFileSync(userFolderPath, JSON.stringify(newPost));
 }
 

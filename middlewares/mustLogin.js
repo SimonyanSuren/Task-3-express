@@ -11,5 +11,4 @@ module.exports.mustLogin = (req, res, next) => {
     err.statusCode = 401;
     next(err);
   }
-  console.log('returning');
 };
